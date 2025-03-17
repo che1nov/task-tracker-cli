@@ -2,8 +2,6 @@
 
 Task Tracker CLI is a simple command-line application written in Go for task management. It allows you to add, update, delete tasks, and track their status.
 
-https://roadmap.sh/projects/task-tracker
-
 ### Features
 
 - Add a task
@@ -108,3 +106,5 @@ The `tasks.json` file is used to store the list of tasks. If the file does not e
 ### License
 
 This project is licensed under the MIT License.
+
+https://roadmap.sh/projects/task-tracker

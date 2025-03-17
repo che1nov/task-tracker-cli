@@ -1,56 +1,57 @@
 # Task Tracker CLI
 
-Task Tracker CLI — это простое приложение командной строки на языке Go для управления задачами. Оно позволяет добавлять, обновлять, удалять задачи, а также отслеживать их статус.
+Task Tracker CLI is a simple command-line application written in Go for task management. It allows you to add, update, delete tasks, and track their status.
 
 https://roadmap.sh/projects/task-tracker
-### Функционал
 
-- Добавление задачи
-- Обновление описания задачи
-- Удаление задачи
-- Отметка задачи как выполняемой
-- Отметка задачи как выполненной
-- Вывод списка всех задач
-- Вывод списка задач по статусу (выполненные, невыполненные, в процессе выполнения)
-- Хранение задач в JSON-файле
+### Features
 
-### Установка
+- Add a task
+- Update task description
+- Delete a task
+- Mark a task as in progress
+- Mark a task as done
+- List all tasks
+- List tasks by status (done, todo, in progress)
+- Store tasks in a JSON file
 
-1. Убедитесь, что у вас установлен Go (>=1.18).
+### Installation
 
-2. Клонируйте репозиторий:
+1. Make sure you have Go (>=1.18) installed.
+
+2. Clone the repository:
    ```sh
    git clone https://github.com/che1nov/task-tracker-cli.git
-   cd task-tracker-cli-cli
+   cd task-tracker-cli
    ```
 
-3. Скомпилируйте и установите:
+3. Build and install:
    ```sh
    go build -o task-cli
    ```
 
-### Использование
+### Usage
 
-#### Добавление новой задачи
-
-```sh
-task-cli add "Купить продукты"
-# Вывод: Задача успешно добавлена (ID: 1)
-```
-
-#### Обновление задачи
+#### Add a new task
 
 ```sh
-task-cli update 1 "Купить продукты и приготовить ужин"
+task-cli add "Buy groceries"
+# Output: Task successfully added (ID: 1)
 ```
 
-#### Удаление задачи
+#### Update a task
+
+```sh
+task-cli update 1 "Buy groceries and cook dinner"
+```
+
+#### Delete a task
 
 ```sh
 task-cli delete 1
 ```
 
-#### Изменение статуса задачи
+#### Change task status
 
 ```sh
 task-cli mark-in-progress 1
@@ -60,13 +61,13 @@ task-cli mark-in-progress 1
 task-cli mark-done 1
 ```
 
-#### Вывод списка задач
+#### List tasks
 
 ```sh
 task-cli list
 ```
 
-#### Вывод списка задач по статусу
+#### List tasks by status
 
 ```sh
 task-cli list done
@@ -80,53 +81,30 @@ task-cli list todo
 task-cli list in-progress
 ```
 
-### Структура задачи
+### Task Structure
 
-Каждая задача представлена в JSON-файле с полями:
+Each task is represented in a JSON file with the following fields:
 
 ```json
 {
   "id": 1,
-  "description": "Купить продукты",
+  "description": "Buy groceries",
   "status": "todo",
   "createdAt": "2025-03-16T12:00:00Z",
   "updatedAt": "2025-03-16T12:00:00Z"
 }
 ```
 
-### Хранение данных
+### Data Storage
 
-Файл `tasks.json` используется для хранения списка задач. Если файл отсутствует, он создается автоматически.
+The `tasks.json` file is used to store the list of tasks. If the file does not exist, it will be created automatically.
 
-### Ошибки и обработка исключений
+### Errors and Exception Handling
 
-- Проверка наличия задачи перед обновлением или удалением
-- Валидация ввода пользователя
-- Обработка ошибок при работе с файлом JSON
+- Check for the existence of a task before updating or deleting
+- Validate user input
+- Handle errors when working with the JSON file
 
-### Лицензия
+### License
 
-Этот проект распространяется под лицензией MIT.
-
-````markdown name=LICENSE
-MIT License
-
-Copyright (c) 2025 Ilya Chernov
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+This project is licensed under the MIT License.
